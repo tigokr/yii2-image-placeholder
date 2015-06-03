@@ -17,5 +17,8 @@
         "psr-4": {
             "tigokr\\imageplaceholder\\": ""
         }
+    },
+    "extra": {
+      'bootstrap': "tigokr\\imageplaceholder\\Bootstrap"
     }
 }
