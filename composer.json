@@ -19,6 +19,6 @@
         }
     },
     "extra": {
-      'bootstrap': "tigokr\\imageplaceholder\\Bootstrap"
+      "bootstrap": "tigokr\\imageplaceholder\\Bootstrap"
     }
 }
