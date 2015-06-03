@@ -1,7 +1,7 @@
 {
     "name": "tigokr/yii2-image-placeholder",
     "description": "Image placeholder",
-    "type": "library",
+    "type": "yii2-extension",
     "keywords": ["yii2","extension","image placeholder"],
     "license": "Apache-2.0",
     "authors": [
