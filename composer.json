@@ -1,0 +1,21 @@
+{
+    "name": "tigokr/yii2-image-placeholder",
+    "description": "Image placeholder",
+    "type": "library",
+    "keywords": ["yii2","extension","image placeholder"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Artem Dekhtyar",
+            "email": "mail@artemd.ru"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "tigokr\\imageplaceholder\\": ""
+        }
+    }
+}
