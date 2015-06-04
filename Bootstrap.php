@@ -9,16 +9,14 @@ class Bootstrap implements  \yii\base\BootstrapInterface {
 
     public $id = 'placeholder';
 
-    public function bootstrap($app)
-    {
+    public function bootstrap($app) {
         if ($app instanceof \yii\web\Application) {
-            $app->controllerMap['placeholder'] = '\tigokr\imageplaceholder\PlaceholderController';
+            $app->controllerMap[$this->id] = '\tigokr\imageplaceholder\PlaceholderController';
 
             $app->getUrlManager()->addRules([
                 $this->id => $this->id . '/index',
                 $this->id.'/<size:\d+(x\d+)?>' => $this->id . '/index',
             ], false);
         }
-
     }
 }

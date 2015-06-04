@@ -5,14 +5,9 @@
  * Date: 03.06.2015
  * Time: 23:05
  */
-// PHP placeholder images
-// Version: 0.1
-// Author: Hinerangi Courtenay - @sky_maiden
-
 // Usage (all parameters are optional):
-// <img src="placeholder.php?size=400x150&bg=eee&fg=999&text=Generated+image" alt="Placeholder image" />
-
-// Inspired by http://placehold.it/
+// <img src="placeholder/400x150?bg=eee&fg=999&text=Generated+image" alt="Placeholder image" />
+// based on
 
 namespace tigokr\imageplaceholder;
 
@@ -22,11 +17,8 @@ class PlaceholderController extends \yii\web\Controller
     // Convert hex to rgb (modified from csstricks.com)
     public function actionIndex()
     {
-        $response = \Yii::$app->response;
-        $response->format = \yii\web\Response::FORMAT_RAW;
-
         // Dimensions
-        $getsize = isset($_GET['size']) ? $_GET['size'] : '100x100';
+        $getsize = isset($_GET['size']) ? $_GET['size'] : '100';
         $dimensions = explode('x', $getsize);
         if(count($dimensions) == 1)
             $dimensions[1] = $dimensions[0];
@@ -56,7 +48,6 @@ class PlaceholderController extends \yii\web\Controller
         $fontheight = abs($box[5] - $box[1]);
         $textwidth = $fontwidth;
 
-
         $xpos = (imagesx($image) - $textwidth) / 2;
         $ypos = (imagesy($image) + $fontheight) / 2;
 
@@ -67,6 +58,9 @@ class PlaceholderController extends \yii\web\Controller
         ob_start();
         imagepng($image);
         $image = ob_get_clean();
+
+        $response = \Yii::$app->response;
+        $response->format = \yii\web\Response::FORMAT_RAW;
         header("Content-type: image/png");
         return $image;
     }
